@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Services</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="emergency.css" />
+</head>
+<body>
+
+  <!-- Top Logo -->
+  <div class="top-logo">
+    <!-- <img src="../1748193285349.pg" alt="Safetravel Logo" class="main-logo" /> -->
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo-title">
+      <img id="blogo" src="./images/Gold Luxury Royal Crown Logo _20250526_171817_0000.png" alt="Logo" />
+      <h1>Shreyas Travels</h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./journey.html">Track</a></li>
+      <li><a href="#">Emergency</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <header class="header">
+    <h1>Emergency Services</h1>
+    <p>Tap a service to call for help or share your location instantly.</p>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </header>
+
+  <!-- Emergency Cards -->
+  <main class="emergency-container">
+
+    <div class="emergency-card">
+      <div class="icon"><i class="fas fa-ambulance"></i></div>
+      <h2>Ambulance</h2>
+      <p>Need urgent medical help?</p>
+      <a href="tel:108" class="btn">Call Ambulance</a>
+    </div>
+
+    <div class="emergency-card">
+      <div class="icon"><i class="fas fa-shield-alt"></i></div>
+      <h2>Police</h2>
+      <p>Report a crime or get protection.</p>
+      <a href="tel:100" class="btn">Call Police</a>
+    </div>
+
+    <div class="emergency-card">
+      <div class="icon"><i class="fas fa-fire-extinguisher"></i></div>
+      <h2>Fire Dept</h2>
+      <p>Report a fire or emergency hazard.</p>
+      <a href="tel:101" class="btn">Call Fire</a>
+    </div>
+
+    <div class="emergency-card">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h2>Share Location</h2>
+      <p>Send your exact GPS location.</p>
+      <button class="btn" onclick="shareLocation()">Share Now</button>
+    </div>
+
+    <div class="emergency-card">
+      <div class="icon"><i class="fas fa-tools"></i></div>
+      <h2>Roadside Assistance</h2>
+      <p>Vehicle trouble? We’ve got you.</p>
+      <a href="tel:1800123456" class="btn">Call Assistance</a>
+    </div>
+
+  </main>
+
+  <!-- Emergency Tips -->
+  <section class="tips-section">
+    <h2>Emergency Tips</h2>
+    <ul>
+      <li>Stay calm and call the right service.</li>
+      <li>Give your name, location, and nature of emergency.</li>
+      <li>Follow instructions carefully.</li>
+      <li>Don’t hang up until told to do so.</li>
+    </ul>
+  </section>
+
+  <!-- Script -->
+  <script>
+    function shareLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+          alert("Location shared: " + pos.coords.latitude + ", " + pos.coords.longitude);
+        }, () => {
+          alert("Location access denied.");
+        });
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
